@@ -1,23 +1,93 @@
-import React from "react";
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 
-const Home = () => {
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 text-white">
-      <div className="text-center max-w-lg p-6 rounded-lg shadow-lg bg-opacity-70 backdrop-blur-sm">
-        <h1 className="text-5xl font-extrabold mb-4 drop-shadow-md">
-          Welcome to My Portfolio
-        </h1>
-        <p className="text-lg font-light leading-relaxed mb-6">
-          Hi, I?m <span className="font-semibold">John Doe</span>, a passionate
-          Frontend Developer dedicated to crafting beautiful and functional web
-          applications. Explore my projects, skills, and experiences below.
-        </p>
-        <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:scale-105 transition-transform">
-          Explore Now
-        </button>
-      </div>
-    </div>
-  );
-};
 
-export default Home;
+function Home() {
+    return (
+        <div className="min-h-screen bg-background px-8 py-12 md:px-24 lg:py-24">
+            <div className="space-y-12">
+                {/* Hero Section */}
+                <div className="space-y-4">
+                    <h1 className="flex items-center gap-2 text-3xl font-bold tracking-tight sm:text-4xl">
+                        Hello there! I am Aman Kohare
+                        {/* <span className="animate-wave text-yellow-300 text-5xl">??</span> */}
+                    </h1>
+                    <p className="text-md text-muted-foreground">
+                        Hello! I'm Aman, a passionate web developer and designer with over 1 year of experience in creating beautiful, functional websites. I specialize in React, Next.js, and Tailwind CSS, and I love bringing ideas to life through code.
+                    </p>
+                    <p className=" text-md text-muted-foreground">
+                        I completed my Bachelor of Technology (B.Tech) in Information Technology from Barkatullah University, Bhopal. Programming Journey: I'm a self-taught programmer on a quest to explore the exciting world of technology.
+                    </p>
+                    <p className="text-md text-muted-foreground">
+                        When not coding, I enjoy watching TV shows and movies, playing games with friends, or hanging out. I'm also constantly listening to music. According to Spotify Wrapped, I listened to 989 minutes of music in 2023 and 3047 in 2022. I also have a keen interest in playing cricket.
+                        
+                    </p>
+                </div>
+
+                {/* Skills Section */}
+                <div className="space-y-8">
+                    <h2 className="text-2xl font-bold tracking-tight">My Skills</h2>
+
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {/* Frontend Development */}
+                        <Card className="overflow-hidden">
+                            <CardContent className="p-6">
+                                <div className="space-y-4">
+                                    <h3 className="text-xl font-semibold">Frontend Development</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        <Badge variant="secondary">React</Badge>
+                                        <Badge variant="secondary">Next.js</Badge>
+                                        <Badge variant="secondary">TypeScript</Badge>
+                                        <Badge variant="secondary">Tailwind CSS</Badge>
+                                        <Badge variant="secondary">Redux</Badge>
+                                        <Badge variant="secondary">HTML5</Badge>
+                                        <Badge variant="secondary">CSS3</Badge>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* Backend Development */}
+                        <Card className="overflow-hidden">
+                            <CardContent className="p-6">
+                                <div className="space-y-4">
+                                    <h3 className="text-xl font-semibold">Backend Development</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        <Badge variant="secondary">Node.js</Badge>
+                                        <Badge variant="secondary">Express</Badge>
+                                        <Badge variant="secondary">Python</Badge>
+                                        <Badge variant="secondary">Django</Badge>
+                                        <Badge variant="secondary">PostgreSQL</Badge>
+                                        <Badge variant="secondary">MongoDB</Badge>
+                                        <Badge variant="secondary">REST APIs</Badge>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* DevOps & Tools */}
+                        <Card className="overflow-hidden">
+                            <CardContent className="p-6">
+                                <div className="space-y-4">
+                                    <h3 className="text-xl font-semibold">DevOps & Tools</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        <Badge variant="secondary">Git</Badge>
+                                        <Badge variant="secondary">Docker</Badge>
+                                        <Badge variant="secondary">AWS</Badge>
+                                        <Badge variant="secondary">CI/CD</Badge>
+                                        <Badge variant="secondary">Linux</Badge>
+                                        <Badge variant="secondary">Kubernetes</Badge>
+                                        <Badge variant="secondary">Vercel</Badge>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Home

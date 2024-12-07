@@ -10,7 +10,8 @@ import {
     Twitter,
     Instagram,
     Sun,
-    Moon
+    Moon,
+    Linkedin
 } from "lucide-react";
 
 import {
@@ -18,7 +19,6 @@ import {
     SidebarContent,
     SidebarGroup,
     SidebarGroupContent,
-    SidebarGroupLabel,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
@@ -46,27 +46,27 @@ const items = [
     },
     {
         title: "About",
-        url: "#",
+        url: "/about",
         icon: User,
     },
     {
         title: "Projects",
-        url: "#",
+        url: "/projects",
         icon: Briefcase,
     },
     {
         title: "Experience",
-        url: "#",
+        url: "/experience",
         icon: FileText,
     },
     {
         title: "Blogs",
-        url: "#",
+        url: "/blogs",
         icon: Book,
     },
     {
         title: "Contact",
-        url: "#",
+        url: "/contact",
         icon: Mail,
     },
 ];
@@ -75,9 +75,9 @@ export function AppSidebar() {
     const { setTheme } = useTheme()
 
     return (
-        <Sidebar className="bg-white dark:black shadow-lg h-screen w-64 flex flex-col justify-between">
+        <Sidebar className="bg-transparent shadow-lg h-screen w-64 flex flex-col justify-between">
             {/* Profile Section */}
-            <div className="p-4 bg-gradient-to-r  text-gray-800 dark:text-gray-100 shadow-gray-300 dark:shadow-gray-800 rounded-b-lg shadow-md">
+            <div className="p-4 bg-gradient-to-r  text-gray-800 dark:text-gray-100 shadow-gray-200 dark:shadow-gray-900 rounded-b-lg shadow-md">
                 <div className="flex items-center gap-3">
                     <div className="bg-gray-100 rounded-full overflow-hidden shadow-md">
                         {/* Profile Image Placeholder */}
@@ -117,17 +117,17 @@ export function AppSidebar() {
             </SidebarContent>
 
             {/* Footer Section */}
-            <div className="sidebar-footer bg-gray-100 dark:bg-gray-800 p-4 rounded-t-lg shadow-md">
+            <div className="sidebar-footer border p-6 rounded-t-lg shadow-lg ">
                 {/* Social Icons */}
-                <div className="flex justify-between items-center mb-4">
-                    <div className="flex gap-3">
+                <div className="flex justify-center mb-6">
+                    <div className="flex gap-4">
                         <a
                             href="https://facebook.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:scale-110 transition-transform"
                         >
-                            <Facebook className="w-6 h-6 text-blue-700 dark:text-blue-400" />
+                            <Facebook className="w-6 h-6 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600" />
                         </a>
                         <a
                             href="https://twitter.com"
@@ -135,7 +135,7 @@ export function AppSidebar() {
                             rel="noopener noreferrer"
                             className="hover:scale-110 transition-transform"
                         >
-                            <Twitter className="w-6 h-6 text-blue-500 dark:text-blue-300" />
+                            <Twitter className="w-6 h-6 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600" />
                         </a>
                         <a
                             href="https://instagram.com"
@@ -143,7 +143,15 @@ export function AppSidebar() {
                             rel="noopener noreferrer"
                             className="hover:scale-110 transition-transform"
                         >
-                            <Instagram className="w-6 h-6 text-pink-600 dark:text-pink-400" />
+                            <Instagram className="w-6 h-6 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600" />
+                        </a>
+                        <a
+                            href="https://linkedin.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:scale-110 transition-transform"
+                        >
+                            <Linkedin className="w-6 h-6 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600" />
                         </a>
                     </div>
                 </div>
@@ -152,27 +160,36 @@ export function AppSidebar() {
                 <div className="text-center">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" size="icon">
-                                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                            <Button variant="outline" size="icon" className="p-3 rounded-full border dark:border-gray-600">
+                                <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-blue-500" />
+                                <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-blue-500" />
                                 <span className="sr-only">Toggle theme</span>
                             </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => setTheme("light")}>
+                        <DropdownMenuContent align="center" className="mt-2 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                            <DropdownMenuItem
+                                onClick={() => setTheme("light")}
+                                className="hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                            >
                                 Light
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => setTheme("dark")}>
+                            <DropdownMenuItem
+                                onClick={() => setTheme("dark")}
+                                className="hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                            >
                                 Dark
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => setTheme("system")}>
+                            <DropdownMenuItem
+                                onClick={() => setTheme("system")}
+                                className="hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                            >
                                 System
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                    < div />
                 </div>
             </div>
+
         </Sidebar>
     );
 }
