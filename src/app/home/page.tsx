@@ -9,19 +9,16 @@ function Home() {
                 {/* Hero Section */}
                 <div className="space-y-4">
                     <h1 className="flex items-center gap-2 text-3xl font-bold tracking-tight sm:text-4xl">
-                        Hello there! I am Aman Kohare
-                        {/* <span className="animate-wave text-yellow-300 text-5xl">??</span> */}
+                        Hello there! I'm Aman 
+
                     </h1>
                     <p className="text-md text-muted-foreground">
-                        Hello! I'm Aman, a passionate web developer and designer with over 1 year of experience in creating beautiful, functional websites. I specialize in React, Next.js, and Tailwind CSS, and I love bringing ideas to life through code.
+                       Passionate web developer and designer with over 1 year of experience in creating beautiful, functional websites. I specialize in React, Next.js, and Tailwind CSS.
                     </p>
                     <p className=" text-md text-muted-foreground">
                         I completed my Bachelor of Technology (B.Tech) in Information Technology from Barkatullah University, Bhopal. Programming Journey: I'm a self-taught programmer on a quest to explore the exciting world of technology.
                     </p>
-                    <p className="text-md text-muted-foreground">
-                        When not coding, I enjoy watching TV shows and movies, playing games with friends, or hanging out. I'm also constantly listening to music. According to Spotify Wrapped, I listened to 989 minutes of music in 2023 and 3047 in 2022. I also have a keen interest in playing cricket.
-                        
-                    </p>
+
                 </div>
 
                 {/* Skills Section */}
