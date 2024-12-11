@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 function About() {
   return (
-    <div className="min-h-screen bg-background px-8 py-12 md:px-56 lg:py-18">
+    <div className="min-h-screen bg-background px-8 py-12 md:px-24 lg:py-18">
       <div className="container transition-colors duration-300">
 
         <motion.section
@@ -16,7 +16,7 @@ function About() {
           className="text-center"
         >
           <Avatar className="w-48 h-48 mx-auto mb-8">
-            <AvatarImage src="/your-photo.jpg" alt="Aman Kohare" />
+            <AvatarImage src="/aman.jpg" alt="Aman Kohare" />
             <AvatarFallback>AK</AvatarFallback>
           </Avatar>
           <h1 className="text-4xl font-bold mb-4">Aman Kohare</h1>

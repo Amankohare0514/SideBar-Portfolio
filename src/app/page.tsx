@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background px-8 py-12 md:px-56 lg:py-18">
+    <div className="min-h-screen bg-background px-8 py-12 md:px-24 lg:py-18">
       <div className="space-y-12">
         {/* Hero Section */}
         <div className="space-y-4">
