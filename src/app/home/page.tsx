@@ -10,7 +10,6 @@ function Home() {
                 <div className="space-y-4">
                     <h1 className="flex items-center gap-2 text-3xl font-bold tracking-tight sm:text-4xl">
                         Hello there! I'm Aman 
-
                     </h1>
                     <p className="text-md text-muted-foreground">
                        Passionate web developer and designer with over 1 year of experience in creating beautiful, functional websites. I specialize in React, Next.js, and Tailwind CSS.
@@ -18,7 +17,6 @@ function Home() {
                     <p className=" text-md text-muted-foreground">
                         I completed my Bachelor of Technology (B.Tech) in Information Technology from Barkatullah University, Bhopal. Programming Journey: I'm a self-taught programmer on a quest to explore the exciting world of technology.
                     </p>
-
                 </div>
 
                 {/* Skills Section */}
