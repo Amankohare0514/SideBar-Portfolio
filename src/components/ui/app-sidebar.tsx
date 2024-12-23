@@ -29,14 +29,9 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+
 import Link from "next/link";
+import { Toggle } from "./toggle";
 
 // Menu items.
 const items = [
@@ -73,7 +68,11 @@ const items = [
 ];
 
 export function AppSidebar() {
-    const { setTheme } = useTheme()
+    const { setTheme, theme } = useTheme();
+
+    const togleTheme = () => {
+        setTheme((theme) => theme === 'light' ? 'dark' : 'light')
+    }
 
     return (
         <Sidebar className="bg-transparent shadow-lg h-screen w-52 flex flex-col justify-between">
@@ -160,57 +159,23 @@ export function AppSidebar() {
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <div className="flex items-center justify-center space-x-4">
-                <div className="text-center">
+                <div className="flex items-center justify-between space-x-4">
                         <button
                             className="bg-gradient-to-r
                              from-gray-800 to-gray-700 hover:from-gray-900 hover:to-gray-950 text-white 
                              dark:from-white dark:to-gray-50 dark:text-black dark:hover:from-gray-100 dark:hover:to-gray-200
-                            text-xs py-3 px-5 rounded-full shadow-xl transition-all duration-200 transform hover:scale-95"
+                            text-xs py-3 px-6 rounded-full shadow-xl transition-all duration-200 transform hover:scale-95"
                         >
                             Resume
                         </button>
-                    </div>
-                    {/* Dropdown Menu */}
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="p-3 rounded-full border dark:border-gray-600"
-                            >
-                                <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 " />
-                                <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 " />
-                                <span className="sr-only">Toggle theme</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent
-                            align="center"
-                            className="mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg"
-                        >
-                            <DropdownMenuItem
-                                onClick={() => setTheme("light")}
-                                className="hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
-                            >
-                                Light
-                            </DropdownMenuItem>
-                            <DropdownMenuItem
-                                onClick={() => setTheme("dark")}
-                                className="hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
-                            >
-                                Dark
-                            </DropdownMenuItem>
-                            <DropdownMenuItem
-                                onClick={() => setTheme("system")}
-                                className="hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
-                            >
-                                System
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-
-                   
-                   
+                        <Toggle onClick={togleTheme}
+                         className="p-3  dark:border-gray-600">
+                            {theme === 'dark' ? (
+                                <Sun className="w-40 h-40" />
+                            ) :
+                                <Moon className="w-40 h-40" />
+                            }
+                        </Toggle>
                 </div>
 
             </div>
