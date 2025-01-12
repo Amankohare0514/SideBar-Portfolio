@@ -5,7 +5,6 @@ import {
     Briefcase,
     FileText,
     Book,
-    Mail,
     Facebook,
     Twitter,
     Instagram,
@@ -59,11 +58,6 @@ const items = [
         title: "Articles",
         url: "/blogs",
         icon: Book,
-    },
-    {
-        title: "Contact",
-        url: "/contact",
-        icon: Mail,
     },
 ];
 
@@ -160,22 +154,29 @@ export function AppSidebar() {
 
                 {/* Dark Mode Toggle */}
                 <div className="flex items-center justify-between space-x-4">
-                        <button
-                            className="bg-gradient-to-r
-                             from-gray-800 to-gray-700 hover:from-gray-900 hover:to-gray-950 text-white 
-                             dark:from-white dark:to-gray-50 dark:text-black dark:hover:from-gray-100 dark:hover:to-gray-200
-                            text-xs py-3 px-6 rounded-full shadow-xl transition-all duration-200 transform hover:scale-95"
+                    <button
+                        className="bg-gradient-to-r
+   from-gray-800 to-gray-700 hover:from-gray-900 hover:to-gray-950 text-white 
+   dark:from-white dark:to-gray-50 dark:text-black dark:hover:from-gray-100 dark:hover:to-gray-200
+  text-xs py-3 px-6 rounded-full shadow-xl transition-all duration-200 transform hover:scale-95"
+                    >
+                        <a
+                            href="/resume.pdf"
+                            download="resume.pdf"
+                            className="w-full h-full block"
                         >
                             Resume
-                        </button>
-                        <Toggle onClick={togleTheme}
-                         className="p-3  dark:border-gray-600">
-                            {theme === 'dark' ? (
-                                <Sun className="w-40 h-40" />
-                            ) :
-                                <Moon className="w-40 h-40" />
-                            }
-                        </Toggle>
+                        </a>
+                    </button>
+
+                    <Toggle onClick={togleTheme}
+                        className="p-3  dark:border-gray-600">
+                        {theme === 'dark' ? (
+                            <Sun className="w-40 h-40" />
+                        ) :
+                            <Moon className="w-40 h-40" />
+                        }
+                    </Toggle>
                 </div>
 
             </div>
